@@ -1,0 +1,28 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-=": "pane::GoForward"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual)",
+    "bindings": {
+      "shift-j": "editor::MoveLineDown", // dragging text on shift-j
+      "shift-k": "editor::MoveLineUp" // dragging text on shift-k
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j j": "vim::NormalBefore" // esc on j j
+    }
+  }
+]

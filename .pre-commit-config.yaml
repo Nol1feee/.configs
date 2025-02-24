@@ -1,0 +1,41 @@
+default_stages: [pre-commit]
+
+repos:
+  - repo: local
+    hooks:
+      - id: clean
+        name: mocks regenerate and html coverage cleaner
+        entry: |
+          bash -c '
+          find . -type d -name mocks | xargs -I {} rm -rf {} | \
+          find . -type f -name coverage.out | xargs -I {} rm -f {} | \
+          find . -type f -name coverage.html | xargs -I {} rm -f {} | \
+          mockery
+              '
+        language: system
+        pass_filenames: false
+
+      - id: gci-format
+        name: gci import formatter
+        entry: |
+          bash -c '
+          git diff --name-only --cached --diff-filter=d | \
+          grep "\\.go$" | \
+          grep -v "_test.go" | \
+          xargs -I {} gci write {} -s alias -s standard -s default
+          '
+        language: system
+        pass_filenames: false
+
+      - id: go-test
+        name: unit tests on all project
+        entry: go test -race ./...
+        language: system
+        pass_filenames: false
+
+      - id: golangci-lint
+        name: golangci-lint on all changed files
+        entry: golangci-lint run --config=.golangci.yaml -v --new-from-rev=HEAD --color=always --sort-results
+        language: system
+        types: [go]
+        pass_filenames: false
