@@ -1,0 +1,13 @@
+{
+    "description": "right_gui to backspace on built-in keyboard",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "right_gui",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [{ "key_code": "delete_or_backspace" }],
+            "type": "basic"
+        }
+    ]
+}
