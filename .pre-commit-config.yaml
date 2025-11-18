@@ -1,41 +1,58 @@
 default_stages: [pre-commit]
 
 repos:
+  # OpenAPI validation + regen
   - repo: local
     hooks:
-      - id: clean
-        name: mocks regenerate and html coverage cleaner
-        entry: |
-          bash -c '
-          find . -type d -name mocks | xargs -I {} rm -rf {} | \
-          find . -type f -name coverage.out | xargs -I {} rm -f {} | \
-          find . -type f -name coverage.html | xargs -I {} rm -f {} | \
-          mockery
-              '
+      - id: openapi-regen
+        name: OpenAPI regen
+        entry: make api-regen
         language: system
         pass_filenames: false
+        description: openapi regen
 
-      - id: gci-format
-        name: gci import formatter
-        entry: |
-          bash -c '
-          git diff --name-only --cached --diff-filter=d | \
-          grep "\\.go$" | \
-          grep -v "_test.go" | \
-          xargs -I {} gci write {} -s alias -s standard -s default
-          '
+      - id: openapi-lint
+        name: OpenAPI Lint (vacuum)
+        entry: make api-lint
         language: system
+        files: ^api/openapi/.*\.yml$
         pass_filenames: false
+        description: Lint OpenAPI specifications with vacuum
 
-      - id: go-test
-        name: unit tests on all project
-        entry: go test -race ./...
+      - id: openapi-breaking
+        name: OpenAPI Breaking Changes (oasdiff)
+        entry: make api-breaking
         language: system
+        files: ^api/openapi/.*\.yml$
         pass_filenames: false
+        description: Check for breaking changes in OpenAPI specs against origin/main
 
+  # Go linting and formatting
+  - repo: local
+    hooks:
       - id: golangci-lint
-        name: golangci-lint on all changed files
-        entry: golangci-lint run --config=.golangci.yaml -v --new-from-rev=HEAD --color=always --sort-results
+        name: golangci-lint
+        entry: make lint
         language: system
-        types: [go]
+        files: \.go$
         pass_filenames: false
+        description: Run golangci-lint
+
+      - id: gci
+        name: gci (Go imports formatter)
+        entry: make gci-fix
+        language: system
+        files: \.go$
+        pass_filenames: false
+        description: Format Go imports with gci
+
+  # Go tests
+  - repo: local
+    hooks:
+      - id: go-test
+        name: Go Tests
+        entry: go test ./...
+        language: system
+        files: \.go$
+        pass_filenames: false
+        description: Run all Go tests

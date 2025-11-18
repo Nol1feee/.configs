@@ -9,18 +9,10 @@
 {
   "edit_predictions": {
     "disabled_globs": ["**/cfg/**", "**/ci/**"],
-    "mode": "eager_preview"
+    "mode": "eager"
   },
   "features": {
     "edit_prediction_provider": "zed"
-  },
-  "icon_theme": "VSCode Icons (Dark)",
-  "assistant": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
-    },
-    "version": "2"
   },
   "wrap_guides": [100, 150],
   "telemetry": {
@@ -30,7 +22,6 @@
   "lsp": {
     "golangci-lint": {},
     "gopls": {
-      "gofumpt": true,
       "initialization_options": {
         "hints": {
           "assignVariableTypes": true,
@@ -59,7 +50,7 @@
     "Go": {
       "language_servers": ["gopls", "golangci-lint"],
       "formatter": "language_server",
-      "format_on_save": "language_server",
+      "format_on_save": "on",
       "tab_size": 4,
       "preferred_line_length": 80
     }
@@ -79,8 +70,6 @@
   },
   "autosave": "on_focus_change",
   "auto_update": true,
-  "file_icons": true,
-  "git_status": true,
   "format_on_save": "on",
   "preview_tabs": {
     "enabled": false,
