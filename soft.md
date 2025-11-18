@@ -15,6 +15,7 @@
 - [orbstack (like docker)](https://orbstack.dev/)
 - [insomnia (like postman)](https://insomnia.rest/)
 - [ticktick](https://www.ticktick.com/)
+- [iterm2 ](https://iterm2.com/index.html)
 
 ## CLI utils
 
