@@ -1,14 +1,14 @@
 ## Apps
 
 - [raycast (like spotlight)](https://www.raycast.com/)
-  - raycast://extensions/rolandleth/kill-process
-  - raycast://extensions/lucaschultz/port-manager/open-ports
-  - raycast://extensions/joshuaiz/password-generator/generate-random-password
-  - raycast://extensions/jmaeso/uuid-generator
-  - raycast://extensions/vitoorgomes/google-meet/default-profile
-  - raycast://extensions/raycast/window-management/toggle-fullscreen
-  - raycast://extensions/ViGeng/deepseeker/ask (only translate)
-  - raycast://extensions/raycast/raycast/confetti
+  - [kill-process](raycast://extensions/rolandleth/kill-process)
+  - [open-ports](raycast://extensions/lucaschultz/port-manager/open-ports)
+  - [generate-random-password](raycast://extensions/joshuaiz/password-generator/generate-random-password)
+  - [uuid-generator](raycast://extensions/jmaeso/uuid-generator)
+  - [default-profile](raycast://extensions/vitoorgomes/google-meet/default-profile)
+  - [toggle-fullscreen](raycast://extensions/raycast/window-management/toggle-fullscreen)
+  - [ask](raycast://extensions/ViGeng/deepseeker/ask) (only translate)
+  - [confetti](raycast://extensions/raycast/raycast/confetti)
 - [arc (browser)](https://arc.net/)
 - [zed (code editor)](https://zed.dev/)
 - [dataflare (DB manager)](https://dataflare.app/)
