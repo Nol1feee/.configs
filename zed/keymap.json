@@ -24,5 +24,28 @@
     "bindings": {
       "j j": "vim::NormalBefore" // esc on j j
     }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-tab": [
+        "tab_switcher::Toggle",
+        {
+          "select_last": false
+        }
+      ]
+    }
+  },
+  {
+    "context": "Workspace || Pane",
+    "bindings": {
+      "cmd-shift-g": "git_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace || Pane",
+    "bindings": {
+      "ctrl-shift-g": "git_panel::ToggleFocus"
+    }
   }
 ]

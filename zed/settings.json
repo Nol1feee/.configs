@@ -5,74 +5,95 @@
 //
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
-// command palette
+// command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "edit_predictions": {
-    "disabled_globs": ["**/cfg/**", "**/ci/**"],
-    "mode": "eager"
+  "agent": {
+    "model_parameters": [],
+    "use_modifier_to_send": true
   },
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "wrap_guides": [100, 150],
-  "telemetry": {
-    "diagnostics": true,
-    "metrics": true
-  },
-  "lsp": {
-    "golangci-lint": {},
-    "gopls": {
-      "initialization_options": {
-        "hints": {
-          "assignVariableTypes": true,
-          "compositeLiteralFields": true,
-          "compositeLiteralTypes": true,
-          "constantValues": true,
-          "functionTypeParameters": true,
-          "parameterNames": true,
-          "rangeVariableTypes": true
-        },
-        "gofumpt": true,
-        "symbolScope": "workspace",
-        "staticcheck": true,
-        "vulncheck": "Imports",
-        "codelenses": {
-          "gc_details": true,
-          "run_govulncheck": true
-        }
-      }
-    }
-  },
-  "languages": {
-    "Markdown": {
-      "show_edit_predictions": false
-    },
-    "Go": {
-      "language_servers": ["gopls", "golangci-lint"],
-      "formatter": "language_server",
-      "format_on_save": "on",
-      "tab_size": 4,
-      "preferred_line_length": 80
-    }
+  "git_panel": {
+    "button": false
   },
   "outline_panel": {
+    "button": false,
     "dock": "right"
   },
+  "use_system_window_tabs": false,
+  "bottom_dock_layout": "contained",
+  "preview_tabs": {
+    "enabled": true
+  },
+  "tabs": {
+    "activate_on_close": "history",
+    "close_position": "right",
+    "file_icons": false,
+    "git_status": true
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show": true
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_sign_in": false,
+    "show_user_picture": false,
+    "show_onboarding_banner": false,
+    "show_project_items": true,
+    "show_branch_name": true,
+    "show_branch_icon": false
+  },
+  "project_panel": {
+    "entry_spacing": "standard",
+    "dock": "left",
+    "button": false
+  },
+  "status_bar": {
+    "active_language_button": true,
+    "cursor_position_button": false
+  },
+  "terminal": {
+    "font_family": "PT Mono",
+    "shell": "system",
+    "button": false
+  },
+  "diagnostics": {
+    "button": true
+  },
+  "search": {
+    "button": false
+  },
+  "debugger": {
+    "button": false
+  },
+  "file_finder": {
+    "include_ignored": "all"
+  },
+  "inlay_hints": {
+    "show_background": true
+  },
+  "show_whitespaces": "none",
+  "indent_guides": {
+    "background_coloring": "indent_aware"
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "relative_line_numbers": "enabled",
+  "autosave": "on_focus_change",
+  "current_line_highlight": "line",
+  "unnecessary_code_fade": 0.4,
+  "ui_font_family": "PT Mono",
+  "buffer_font_weight": 400.0,
+  "buffer_line_height": "standard",
+  "buffer_font_family": "PT Mono",
+  "icon_theme": "Catppuccin Latte",
   "base_keymap": "VSCode",
   "vim_mode": true,
-  "ui_font_size": 14,
-  "buffer_font_size": 12.0,
-  "buffer_font_family": "Noto Sans",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "Catppuccin Macchiato - No Italics"
-  },
-  "autosave": "on_focus_change",
-  "auto_update": true,
-  "format_on_save": "on",
-  "preview_tabs": {
-    "enabled": false,
-    "enable_preview_from_code_navigation": false
+    "light": "Catppuccin Iced Latte (Blur) [Heavy]",
+    "dark": "Catppuccin Mocha (Blur) [Light]"
   }
 }
