@@ -28,12 +28,11 @@ font-size = 19
 - [orbstack (like docker)](https://orbstack.dev/)
 - [insomnia (like postman)](https://insomnia.rest/)
 - [ticktick](https://www.ticktick.com/)
-- [iterm2 ](https://iterm2.com/index.html)
 - [obsidian (like notes)](https://obsidian.md/)
 
 ## CLI utils
 
-- [lazygit (terminal git)](https://github.com/jesseduffield/lazygit)
+- [lazygit](https://github.com/jesseduffield/lazygit)
 ```bash (~/Library/Application\ Support/lazygit/config.yml)
 git:
   pagers:
