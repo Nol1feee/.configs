@@ -53,4 +53,37 @@ refresher:
 - [claude code](https://www.claude.com/product/claude-code)
 - [pre-commit](https://pre-commit.com/)
 
-##
+
+# zsh
+
+```bash
+# === Плагины через antidote ===
+source /opt/homebrew/share/antidote/antidote.zsh
+antidote load ~/.zsh_plugins.txt
+
+# === История команд ===
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=50000
+setopt inc_append_history      # писать историю сразу
+setopt share_history           # общая история между вкладками
+setopt hist_ignore_all_dups    # не дублировать команды
+
+# === Комплиты ===
+autoload -Uz compinit
+compinit
+
+# === FZF (история поиска) ===
+eval "$(fzf --zsh)"
+
+# === Алиасы ===
+alias lg="lazygit"
+alias gsw='git switch'
+alias gc='git commit'
+alias gp='git push'
+alias ga='git add'
+
+# === Тема промпта (вместо oh-my-zsh) ===
+eval "$(starship init zsh)"
+export PATH="$HOME/.local/bin:$PATH"
+```
