@@ -56,7 +56,7 @@ refresher:
 
 # zsh
 
-```bash
+```bash (~/.zshrc)
 # === Плагины через antidote ===
 source /opt/homebrew/share/antidote/antidote.zsh
 antidote load ~/.zsh_plugins.txt
@@ -86,4 +86,9 @@ alias ga='git add'
 # === Тема промпта (вместо oh-my-zsh) ===
 eval "$(starship init zsh)"
 export PATH="$HOME/.local/bin:$PATH"
+```
+
+```bash (~/.zsh_plugins.txt)
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
 ```
