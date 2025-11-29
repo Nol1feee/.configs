@@ -20,12 +20,6 @@
     }
   },
   {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      "j j": "vim::NormalBefore" // esc on j j
-    }
-  },
-  {
     "context": "Workspace",
     "bindings": {
       "ctrl-tab": [
