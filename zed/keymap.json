@@ -9,15 +9,15 @@
   {
     "context": "Pane",
     "bindings": {
-      "ctrl-=": "pane::GoForward"
-    }
+      "ctrl-=": "pane::GoForward",
+    },
   },
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
       "shift-j": "editor::MoveLineDown", // dragging text on shift-j
-      "shift-k": "editor::MoveLineUp" // dragging text on shift-k
-    }
+      "shift-k": "editor::MoveLineUp", // dragging text on shift-k
+    },
   },
   {
     "context": "Workspace",
@@ -25,21 +25,34 @@
       "ctrl-tab": [
         "tab_switcher::Toggle",
         {
-          "select_last": false
-        }
-      ]
-    }
+          "select_last": false,
+        },
+      ],
+    },
   },
   {
     "context": "Workspace || Pane",
     "bindings": {
-      "cmd-shift-g": "git_panel::ToggleFocus"
-    }
+      "cmd-shift-g": "git_panel::ToggleFocus",
+    },
   },
   {
     "context": "Workspace || Pane",
     "bindings": {
-      "ctrl-shift-g": "git_panel::ToggleFocus"
+      "ctrl-shift-g": "git_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "unbind": {
+      "h": "project_panel::CollapseSelectedEntry",
+      "l": "project_panel::ExpandSelectedEntry"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space": "project_panel::Open"
     }
   }
 ]
