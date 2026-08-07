@@ -1,7 +1,6 @@
 default_stages: [pre-commit]
 
 repos:
-  # OpenAPI validation + regen
   - repo: local
     hooks:
       - id: openapi-regen
@@ -9,50 +8,38 @@ repos:
         entry: make api-regen
         language: system
         pass_filenames: false
-        description: openapi regen
 
       - id: openapi-lint
-        name: OpenAPI Lint (vacuum)
+        name: OpenAPI lint
         entry: make api-lint
         language: system
-        files: ^api/openapi/.*\.yml$
+        files: ^api/openapi/.*\.ya?ml$
         pass_filenames: false
-        description: Lint OpenAPI specifications with vacuum
 
       - id: openapi-breaking
-        name: OpenAPI Breaking Changes (oasdiff)
+        name: OpenAPI breaking changes
         entry: make api-breaking
         language: system
-        files: ^api/openapi/.*\.yml$
+        files: ^api/openapi/.*\.ya?ml$
         pass_filenames: false
-        description: Check for breaking changes in OpenAPI specs against origin/main
 
-  # Go linting and formatting
-  - repo: local
-    hooks:
       - id: golangci-lint
         name: golangci-lint
         entry: make lint
         language: system
         files: \.go$
         pass_filenames: false
-        description: Run golangci-lint
 
       - id: gci
-        name: gci (Go imports formatter)
+        name: gci
         entry: make gci-fix
         language: system
         files: \.go$
         pass_filenames: false
-        description: Format Go imports with gci
 
-  # Go tests
-  - repo: local
-    hooks:
       - id: go-test
-        name: Go Tests
+        name: Go tests
         entry: go test ./...
         language: system
         files: \.go$
         pass_filenames: false
-        description: Run all Go tests

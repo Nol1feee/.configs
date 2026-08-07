@@ -1,0 +1,14 @@
+git:
+  pagers:
+    - pager: delta --dark --paging=never --line-numbers --syntax-theme="Monokai Extended"
+
+gui:
+  showIcons: true
+  showCommandLog: true
+  commandLogSize: 8
+  language: en
+  showFileTree: true
+
+refresher:
+  refreshInterval: 10
+  fetchInterval: 60

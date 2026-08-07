@@ -1,177 +1,28 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "lsp": {
-    "pyright": {
-      "settings": {
-        "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
-        "python.analysis.extraPaths": [
-          "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages"
-        ]
-      }
-    },
-    "gopls": {
-      "initialization_options": {
-        "gofumpt": true
-      }
-    },
-    "protobuf-language-server": {
-      "binary": {
-        // указываем путь к твоему бинарю
-        "path": "/Users/a7tech036/go/bin/protobuf-language-server"
-        // можно ещё arguments/env, если надо
-        // "arguments": [],
-        // "env": { }
-      }
-    }
-  },
-  "format_on_save": "on",
-  "languages": {
-    "Go": {
-      "formatter": {
-        "language_server": {
-          "name": "gopls"
-        }
-      }
-    },
-    "YAML": {
-      "formatter": {
-        "external": {
-          "command": "npx",
-          "arguments": ["prettier", "--stdin-filepath", "{buffer_path}"]
-        }
-      }
-    },
-    "Proto": {
-      // просто указываем, какой LSP использовать
-      "language_servers": ["protobuf-language-server"],
-      "format_on_save": "off",
-      "formatter": {
-        "external": {
-          "command": "clang-format",
-          "arguments": []
-        }
-      }
-    },
-    "Markdown": {
-      "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}", "--write"]
-        }
-      },
-      "prettier": {
-        "printWidth": 120,
-        "proseWrap": "preserve",
-        "tabWidth": 2
-      }
-    }
-  },
-  "agent_servers": {
-    "claude": {
-      "default_model": "default"
-    }
-  },
-  "agent": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-opus-4-5-thinking"
-    },
-    "model_parameters": [],
-    "use_modifier_to_send": true
-  },
   "git_panel": {
-    "button": false
+    "dock": "left"
   },
-  "outline_panel": {
-    "button": false,
-    "dock": "right"
-  },
-  "use_system_window_tabs": false,
-  "bottom_dock_layout": "contained",
-  "preview_tabs": {
-    "enabled": true
-  },
-  "tabs": {
-    "activate_on_close": "history",
-    "close_position": "right",
-    "file_icons": false,
-    "git_status": true
-  },
-  "tab_bar": {
-    "show_nav_history_buttons": false,
-    "show": true
-  },
-  "title_bar": {
-    "show_menus": false,
-    "show_sign_in": false,
-    "show_user_picture": false,
-    "show_onboarding_banner": false,
-    "show_project_items": true,
-    "show_branch_name": true,
-    "show_branch_icon": false
+  "diff_view_style": "unified",
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
   },
   "project_panel": {
-    "hide_hidden": false,
-    "entry_spacing": "standard",
-    "dock": "left",
-    "button": false
+    "dock": "left"
   },
-  "status_bar": {
-    "active_language_button": true,
-    "cursor_position_button": false
+  "cli_default_open_behavior": "new_window",
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
   },
-  "terminal": {
-    "font_family": "PT Mono",
-    "shell": "system",
-    "button": false
-  },
-  "diagnostics": {
-    "button": true
-  },
-  "search": {
-    "button": false
-  },
-  "debugger": {
-    "dock": "right",
-    "button": false
-  },
-  "file_finder": {
-    "include_ignored": "all"
-  },
-  "inlay_hints": {
-    "show_background": true
-  },
-  "show_whitespaces": "none",
-  "indent_guides": {
-    "background_coloring": "indent_aware"
-  },
-  "minimap": {
-    "show": "never"
-  },
-  "relative_line_numbers": "enabled",
-  "autosave": "on_focus_change",
-  "current_line_highlight": "line",
-  "unnecessary_code_fade": 0.4,
-  "ui_font_family": "PT Mono",
-  "buffer_font_weight": 400.0,
-  "buffer_line_height": "standard",
-  "buffer_font_family": "PT Mono",
-  "icon_theme": "Catppuccin Latte",
-  "base_keymap": "VSCode",
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha"
+    "light": "One Light",
+    "dark": "One Dark"
   }
 }
