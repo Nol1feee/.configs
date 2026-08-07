@@ -6,6 +6,9 @@ Ghostty, Zed, Karabiner-Elements, Neovim и вспомогательные ск�
 Репозиторий намеренно **не содержит** пароли, токены, SSH/VPN-ключи, browser
 profiles, `auth.json`, корпоративные сертификаты и локальные базы.
 
+Полный ручной план переезда и зафиксированные пробелы находятся в
+[`MIGRATION_CHECKLIST.md`](MIGRATION_CHECKLIST.md).
+
 ## Быстрый старт на новом Mac
 
 1. Пройти корпоративную настройку: Self Service, сертификаты, VPN и Skotty.
@@ -58,7 +61,8 @@ Store или Self Service.
 - Проверить локальные PostgreSQL-базы и при необходимости перенести через dump.
 - Запустить OrbStack на старом Mac, проверить containers/volumes и экспортировать
   только нужные данные.
-- Дождаться полной синхронизации Obsidian/GoodNotes/TickTick через iCloud.
+- Подключить новый Mac к Syncthing и проверить активный Obsidian vault
+  `~/Downloads/zettle`. Наличие iCloud-контейнера не означает, что vault использует iCloud.
 - Arcadia и `~/.ya` не копировать: mount и build cache создаются заново.
 
 ### Codex
@@ -81,7 +85,7 @@ mount Arcadia и установки `ya` tools.
 
 ```bash
 GOODNOTES_EXPORT_DIR="$HOME/path/to/GoodNotes" \
-OBSIDIAN_VAULT_DIR="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault" \
+OBSIDIAN_VAULT_DIR="$HOME/Downloads/zettle/GoodNotes" \
 ./scripts/sync-goodnotes.sh
 ```
 
